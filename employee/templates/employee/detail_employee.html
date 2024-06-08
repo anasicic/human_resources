@@ -1,66 +1,74 @@
 {% extends "employee/base.html" %}
 {% block content %}
     <h2>Employee Details</h2>
-    <table class="table">
-        <tr>
-            <th>First Name:</th>
-            <td>{{ employee.first_name }}</td>
-        </tr>
-        <tr>
-            <th>Last Name:</th>
-            <td>{{ employee.last_name }}</td>
-        </tr>
-        <tr>
-            <th>Gender:</th>
-            <td>{{ employee.gender }}</td>
-        </tr>
-        <tr>
-            <th>Birth Year:</th>
-            <td>{{ employee.birth_year }}</td>
-        </tr>
-        <tr>
-            <th>Start Date:</th>
-            <td>{{ employee.start_date }}</td>
-        </tr>
-        <tr>
-            <th>Contract Type:</th>
-            <td>{{ employee.contract_type }}</td>
-        </tr>
-        <tr>
-            <th>Contract Duration:</th>
-            <td>
-                {% if employee.contract_duration %}
-                    {{ employee.contract_duration }} months
-                {% else %}
-                    N/A
-                {% endif %}
-            </td>
-        </tr>
-        <tr>
-            <th>Department:</th>
-            <td>{{ employee.department }}</td>
-        </tr>
-        {% if employee.annual_leave_days %}
-        <tr>
-            <th>Annual Leave Days:</th>
-            <td>{{ employee.annual_leave_days }}</td>
-        </tr>
+    <div>
+        {% if employee.photo %}
+            <img src="{{ employee.photo.url }}" alt="Employee Photo" class="img-fluid">
         {% endif %}
-        {% if employee.free_days %}
-        <tr>
-            <th>Free Days:</th>
-            <td>{{ employee.free_days }}</td>
-        </tr>
-        {% endif %}
-        {% if employee.paid_leave_days %}
-        <tr>
-            <th>Paid Leave Days:</th>
-            <td>{{ employee.paid_leave_days }}</td>
-        </tr>
-        {% endif %}
-    </table>
-    <a href="{% url 'employee-home' %}" class="btn btn-secondary">Back to List</a>
-    
-    <!-- Dodajte gumb "Update" -->
-    <a href="{% url 'update-employee' pk=employee.pk %}" class="btn btn-primary">Update</a>
+    </div>
+    <div>
+        <table class="table">
+            <tr>
+                <th>First Name:</th>
+                <td>{{ employee.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last Name:</th>
+                <td>{{ employee.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Gender:</th>
+                <td>{{ employee.gender }}</td>
+            </tr>
+            <tr>
+                <th>Birth Year:</th>
+                <td>{{ employee.birth_year }}</td>
+            </tr>
+            <tr>
+                <th>Start Date:</th>
+                <td>{{ employee.start_date }}</td>
+            </tr>
+            <tr>
+                <th>Contract Type:</th>
+                <td>{{ employee.contract_type }}</td>
+            </tr>
+            <tr>
+                <th>Contract Duration:</th>
+                <td>
+                    {% if employee.contract_duration %}
+                        {{ employee.contract_duration }} months
+                    {% else %}
+                        
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Department:</th>
+                <td>{{ employee.department }}</td>
+            </tr>
+            {% if employee.annual_leave_days %}
+            <tr>
+                <th>Annual Leave Days:</th>
+                <td>{{ employee.annual_leave_days }}</td>
+            </tr>
+            {% endif %}
+            {% if employee.free_days %}
+            <tr>
+                <th>Free Days:</th>
+                <td>{{ employee.free_days }}</td>
+            </tr>
+            {% endif %}
+            {% if employee.paid_leave_days %}
+            <tr>
+                <th>Paid Leave Days:</th>
+                <td>{{ employee.paid_leave_days }}</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+    <div>
+        <!-- Dodajte gumb "Update" -->
+        <a href="{% url 'employee-home' %}" class="btn btn-secondary">Back to List</a>
+        <a href="{% url 'update-employee' pk=employee.pk %}" class="btn btn-primary">Update</a>
+    </div>
 {% endblock content %}

@@ -10,6 +10,7 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Department</th>
+                <th>Contract Type</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
                     <td><a href="{% url 'detail-employee' employee.pk %}">{{ employee.first_name }}</a></td>
                     <td>{{ employee.last_name }}</td>
                     <td>{{ employee.department }}</td>
+                    <td>{{ employee.contract_type }}</td>
                 </tr>
             {% endfor %}
         </tbody>

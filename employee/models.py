@@ -3,6 +3,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from datetime import datetime
 
 
+
+
 class Employee(models.Model):
     
     CONTRACT_TYPE_CHOICES = [
@@ -38,3 +40,5 @@ class Employee(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+    
+   

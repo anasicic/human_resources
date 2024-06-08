@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Employee
 from .forms import EmployeeForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required
 def home(request):
     context = {
         "employees": Employee.objects.all()
@@ -13,6 +14,7 @@ def home(request):
     }
     return render (request, "employee/home.html", context)
 
+@login_required
 def add_employee(request):
     if request.method == 'POST':
         form = EmployeeForm(request.POST, request.FILES)
@@ -24,7 +26,7 @@ def add_employee(request):
         form = EmployeeForm()
     return render(request, 'employee/add_employee.html', {'form': form})
 
-
+@login_required
 def update_employee(request, pk):
     employee = get_object_or_404(Employee, pk=pk)
     if request.method == 'POST':
@@ -37,6 +39,7 @@ def update_employee(request, pk):
         form = EmployeeForm(instance=employee)
     return render(request, 'employee/update_employee.html', {'form': form, 'employee': employee})
 
+@login_required
 def detail_employee(request, pk):
     employee = get_object_or_404(Employee, pk=pk)
     return render(request, 'employee/detail_employee.html', {'employee': employee})
