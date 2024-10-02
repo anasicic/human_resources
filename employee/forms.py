@@ -1,6 +1,5 @@
 from django import forms
 from django.forms import ModelForm
-from PIL import Image
 from .models import Employee
 
 class EmployeeForm(ModelForm):
