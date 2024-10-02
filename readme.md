@@ -13,11 +13,11 @@
 
 ## Pokretanje servera
 
-Kako biste pokrenuli projekat lokalno, pratite sledeće korake:
+Kako biste pokrenuli projekat lokalno, pratite sljedeće korake:
 
 1. **Klonirajte repozitorij**:
 
-    Ako projekat preuzimate sa GitHub-a, klonirajte repozitorij koristeći `git clone`:
+    Ako projekt preuzimate sa GitHub-a, klonirajte repozitorij koristeći `git clone`:
 
     ```bash
     git clone https://github.com/anasicic/human_resources.git
