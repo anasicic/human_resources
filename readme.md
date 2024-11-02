@@ -1,61 +1,61 @@
 # Human Resources
 
-**Human Resources** je web aplikacija temeljena na MTV (Model-Template-View) arhitekturi, izrađena u Djangu. Aplikacija omogućava spremanje i pregled podataka o zaposlenicima.
+**Human Resources** is a web application based on the MTV (Model-Template-View) architecture, developed in Django. The application allows storing and viewing employee data.
 
-## Sadržaj
+## Contents
 
-- [Pokretanje servera](#pokretanje-servera)
-- [Struktura aplikacije](#struktura-aplikacije)
-- [Funkcionalnosti](#funkcionalnosti)
-- [Tehnologije](#tehnologije)
+- [Running the Server](#running-the-server)
+- [Application Structure](#application-structure)
+- [Features](#features)
+- [Technologies](#technologies)
 
 ---
 
-## Pokretanje servera
+## Running the Server
 
-Kako biste pokrenuli projekat lokalno, pratite sljedeće korake:
+To run the project locally, follow these steps:
 
-1. **Klonirajte repozitorij**:
+1. **Clone the Repository**:
 
-    Ako projekt preuzimate sa GitHub-a, klonirajte repozitorij koristeći `git clone`:
+    If downloading the project from GitHub, clone the repository using `git clone`:
 
     ```bash
     git clone https://github.com/anasicic/human_resources.git
     ```
 
-2. **Idite u direktorij projekta**:
+2. **Navigate to the Project Directory**:
 
-    Nakon što je projekt kloniran, uđite u direktorij projekta:
+    After cloning the project, navigate to the project directory:
 
     ```bash
     cd human_resources
     ```
 
-3. **Instalirajte potrebne pakete**:
+3. **Install Required Packages**:
 
     ```bash
     pip install -r requirements.txt
     ```
 
-4. **Stvorite migracijske datoteke za bazu podataka**:
+4. **Create Migration Files for the Database**:
 
     ```bash
     python manage.py makemigrations
     ```
 
-5. **Izvršite migraciju kako biste primijenili promjene u bazi podataka**:
+5. **Apply Migrations to Implement Changes in the Database**:
 
     ```bash
     python manage.py migrate
     ```
 
-6. **Pokrenite razvojni server**:
+6. **Run the Development Server**:
 
     ```bash
     python manage.py runserver
     ```
 
-7. **Otvorite preglednik i idite na**:
+7. **Open a Browser and Go To**:
 
     ```url
     http://127.0.0.1:8000/
@@ -63,53 +63,53 @@ Kako biste pokrenuli projekat lokalno, pratite sljedeće korake:
 
 ---
 
-## Struktura aplikacije
+## Application Structure
 
-Aplikacija se sastoji od dvije aplikacije: `employee` i `user`. Obje aplikacije koriste zajednički `base.html`, koji definira kostur svih stranica.
+The application consists of two apps: `employee` and `user`. Both apps share a common `base.html` file, which defines the layout of all pages.
 
-- **Baza podataka**: Aplikacija koristi SQLite za pohranu podataka.
-- **Frontend**: Frontend je izrađen pomoću HTML, CSS i Bootstrap.
-
----
-
-## Funkcionalnosti
-
-### 1. Prijava korisnika
-
-- Pri pokretanju aplikacije, korisnicima se prikazuje sučelje za prijavu (Login).
-- Neregistrirani korisnici mogu se registrirati putem forme na linku "Register".
-- **Funkcionalnost**: Korisnička autentifikacija (prijava, registracija, odjava).
-
-### 2. Prikaz podataka o zaposlenicima
-
-- Prikazuje osnovne podatke o zaposlenicima, uključujući ime, prezime, odjel i vrstu ugovora.
-- Klikom na ime zaposlenika otvara se detaljan prikaz sa dodatnim informacijama.
-
-### 3. Administratorske ovlasti
-
-- Administrator može dodavati i brisati zaposlenike putem administracijskog panela.
-- **Funkcionalnost**: Administratorske funkcije (dodavanje i brisanje zaposlenika).
-
-### 4. Ažuriranje podataka o zaposlenicima
-
-- Korisnici mogu ažurirati podatke zaposlenika putem forme, uz obavijest o uspjehu nakon promjena.
-
-### 5. Dodavanje novog zaposlenika
-
-- Korisnici mogu unositi nove zaposlenike putem forme na početnoj stranici.
-
-### 6. Korisnički profil
-
-- Korisnici mogu ažurirati svoje podatke putem stranice "Profile".
-
-### 7. Odjava
-
-- Korisnik se može odjaviti klikom na "Logout".
+- **Database**: The application uses SQLite to store data.
+- **Frontend**: The frontend is built using HTML, CSS, and Bootstrap.
 
 ---
 
-## Tehnologije
+## Features
 
-- **Django** - Web framework za backend
-- **SQLite** - Baza podataka
-- **HTML, CSS, Bootstrap** - Frontend tehnologije za izradu sučelja
+### 1. User Login
+
+- Upon launching the application, users are presented with a login interface.
+- Unregistered users can register through the "Register" link.
+- **Feature**: User authentication (login, registration, logout).
+
+### 2. Display Employee Data
+
+- Shows basic information about employees, including first name, last name, department, and contract type.
+- Clicking on an employee's name opens a detailed view with additional information.
+
+### 3. Administrative Privileges
+
+- Administrators can add and delete employees through the admin panel.
+- **Feature**: Administrative functions (adding and deleting employees).
+
+### 4. Updating Employee Data
+
+- Users can update employee data through a form, receiving a success message after changes are applied.
+
+### 5. Adding a New Employee
+
+- Users can add new employees through a form on the main page.
+
+### 6. User Profile
+
+- Users can update their own information via the "Profile" page.
+
+### 7. Logout
+
+- Users can log out by clicking "Logout".
+
+---
+
+## Technologies
+
+- **Django** - Web framework for backend
+- **SQLite** - Database
+- **HTML, CSS, Bootstrap** - Frontend technologies for building the interface
